@@ -53,8 +53,8 @@ endif
 create_lib:
 	vlib -dirpath lib $(fp_dutlib)
 	vlib -dirpath lib $(fp_tblib)
-	vmap dut_lib $(fp_dutlib)
-	vmap tb_lib $(fp_tblib)
+	vmap -modelsimini $(fp_proj_ini) dut_lib $(fp_dutlib)
+	vmap -modelsimini $(fp_proj_ini) tb_lib $(fp_tblib)
 
 compile:
 	@vlog -sv -modelsimini $(fp_proj_ini) source/and_gate.sv
